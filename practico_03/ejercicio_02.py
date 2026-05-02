@@ -10,7 +10,18 @@ class Articulo:
           clase (@classmethod) con una variable de clase
     """
 
-    # Completar
+    _last_id = 0
+
+    def __init__(self, nombre=None):
+        """Constructor que asigna nombre e id incremental automáticamente."""
+        self.nombre = nombre
+        self.id_ = Articulo._get_next_id()
+
+    @classmethod
+    def _get_next_id(cls):
+        """Método de clase que incrementa y devuelve el siguiente id."""
+        cls._last_id += 1
+        return cls._last_id
 
 
 # NO MODIFICAR - INICIO

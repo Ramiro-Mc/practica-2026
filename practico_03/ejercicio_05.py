@@ -11,7 +11,25 @@ class Auto:
     
     Referencia: https://docs.python.org/3/library/functions.html#property"""
 
-    # Completar
+    def __init__(self, nombre: str, precio: float):
+        """Constructor que inicializa nombre (inmutable) y precio (mutable)."""
+        self._nombre = nombre
+        self._precio = precio
+    
+    @property
+    def nombre(self) -> str:
+        """Propiedad de lectura que devuelve el nombre con primer letra en mayúscula."""
+        return self._nombre.capitalize()
+    
+    @property
+    def precio(self) -> float:
+        """Propiedad que devuelve el precio redondeado a 2 decimales."""
+        return round(self._precio, 2)
+    
+    @precio.setter
+    def precio(self, valor: float):
+        """Setter que permite modificar el precio."""
+        self._precio = valor
 
 
 # NO MODIFICAR - INICIO
@@ -38,8 +56,29 @@ from dataclasses import dataclass
 @dataclass
 class Auto:
     """Re-Escribir utilizando DataClasses"""
-
-    # Completar
+    
+    _nombre: str
+    _precio: float
+    
+    def __init__(self, nombre: str, precio: float):
+        """Constructor que inicializa nombre y precio."""
+        self._nombre = nombre
+        self._precio = precio
+    
+    @property
+    def nombre(self) -> str:
+        """Propiedad de lectura que devuelve el nombre con primer letra en mayúscula."""
+        return self._nombre.capitalize()
+    
+    @property
+    def precio(self) -> float:
+        """Propiedad que devuelve el precio redondeado a 2 decimales."""
+        return round(self._precio, 2)
+    
+    @precio.setter
+    def precio(self, valor: float):
+        """Setter que permite modificar el precio."""
+        self._precio = valor
 
 
 # NO MODIFICAR - INICIO
